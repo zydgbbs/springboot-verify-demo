@@ -30,6 +30,7 @@ public class User {
      * @Size(max,min):限制字符长度必须在min到max之间，如：@Size(min=3,max=20,message="{account.username.size}")
      * @Email
      * @Range(min=, max=, message=):被注释的元素必须在合适的范围内
+     * @Length(min = 4, max = 10, message = "name 长度必须在 {min} - {max} 之间")
      */
 
     @NotNull(message = "姓名必传")
