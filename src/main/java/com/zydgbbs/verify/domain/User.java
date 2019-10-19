@@ -1,5 +1,6 @@
 package com.zydgbbs.verify.domain;
 
+import com.zydgbbs.verify.annotation.DateTimeFormat;
 import com.zydgbbs.verify.annotation.IsMobile;
 import org.hibernate.validator.constraints.Length;
 
@@ -52,7 +53,9 @@ public class User {
     private Integer gender;
 
     //Postman传值：2018/7/7 11:11:00即可
-    private Date birthday;
+    @DateTimeFormat(format = "yyyy-MM-dd")
+    //private Date birthday;
+    private String birthday;
 
     @Null(message = "只能为空")
     private String nullStr;
@@ -113,11 +116,11 @@ public class User {
         this.gender = gender;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
